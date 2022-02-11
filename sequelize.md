@@ -7,7 +7,7 @@ remember to install tedious as well, it's the mssql driver
 
 # Shared:
 
-```javascript
+```JavaScript
 const user = 'username';
 const pass = 'password';
 const dbname = 'databasename';
@@ -18,7 +18,7 @@ const seqInstanceName = 'instanceName';
 
 # test connect med tedious:
 
-´´´
+```JavaScript
 const { Connection } = require('tedious');
 
 const config = {
@@ -43,11 +43,11 @@ connection.on('connect', function (err) {
 });
 
 connection.connect();
-´´´
+```
 
 Connect to MSSQL domain instance with sequlize:
 
-´´´
+```JavaScript
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(dbname, null, null, {
@@ -67,13 +67,13 @@ const sequelize = new Sequelize(dbname, null, null, {
     },
   },
 });
-´´´
+```
 
 # How to auto generate tables with sequelize-auto
 
 make a config json:
 
-´´´
+```JSON
 {
   "dialectOptions": {
     "authentication": {
@@ -89,7 +89,7 @@ make a config json:
     }
     }
 }
-´´´
+```
 
 write in commandline:
 
