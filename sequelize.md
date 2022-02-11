@@ -7,14 +7,14 @@ remember to install tedious as well, it's the mssql driver
 
 # Shared:
 
-'''
+```javascript
 const user = 'username';
 const pass = 'password';
 const dbname = 'databasename';
 const tediousServer = 'url\instanceName';
 const seqServer = 'url'
 const seqInstanceName = 'instanceName';
-'''
+```
 
 # test connect med tedious:
 
