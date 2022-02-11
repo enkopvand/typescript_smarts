@@ -93,4 +93,6 @@ make a config json:
 
 write in commandline:
 
+```Console
 node_modules\.bin\sequelize-auto -h seqServer -e mssql -c test.json -l ts -o "./models" -d dbName -s schemaName -t tableName
+```
