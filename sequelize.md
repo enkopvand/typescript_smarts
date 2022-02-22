@@ -75,18 +75,23 @@ make a config json:
 
 ```JSON
 {
+  "host": "sqLServer", // update
+  "database": "DBname", // update
+  "dialect": "mssql",
   "dialectOptions": {
     "authentication": {
       "type": "default",
       "options": {
-        "userName": "user",
-        "password": "pass"
+        "userName": "DBUSER", // udate
+        "password": "PASS" // update
       }
     },
     "options": {
-      "instanceName": "instanceName",
+      "instanceName": "name", // update (this is the instancename in the server.com\ex2020 = ex2020)
       "encrypt": true
-    }
+    },
+    "lang": "ts",
+    "directory": "./models"
     }
 }
 ```
@@ -94,5 +99,35 @@ make a config json:
 write in commandline:
 
 ```Console
-node_modules\.bin\sequelize-auto -h seqServer -e mssql -c test.json -l ts -o "./models" -d dbName -s schemaName -t tableName
+node_modules\.bin\sequelize-auto -c DBtoModel.json -t "schema.table1" "schema.table2" "schema.table3"
+```
+
+As a js file:
+(Note that the tables part doesn't seem to work)
+
+```JavaScript
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const SequelizeAuto = require('sequelize-auto');
+
+const auto = new SequelizeAuto('DBname', null, null, { // update
+  host: 'sqLServer', // update
+  dialect: 'mssql',
+  dialectOptions: {
+    authentication: {
+      type: 'default',
+      options: {
+        userName: 'DBUSER', // update
+        password: 'PASS', // update
+      },
+    },
+    options: {
+      instanceName: 'name', // update (this is the instancename in the server.com\ex2020 = ex2020)
+      encrypt: true,
+    },
+    lang: 'ts',
+    directory: './models',
+    tables: ['schema.table1', 'schema.table2', 'schema.table3'],
+  },
+});
+auto.run();
 ```
