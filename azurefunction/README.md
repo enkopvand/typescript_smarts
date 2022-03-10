@@ -30,3 +30,12 @@ docker run -p 8080:80 -it helios-func-doc2data:v1.0.0
 http://localhost:8080/api/HttpExample?name=jacob
 
 http://localhost:8080/api/bdode?name=jacob
+
+
+create
+resource group
+functions appp
+
+setup
+deploymentslot on function app
+
