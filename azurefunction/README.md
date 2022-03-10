@@ -6,19 +6,11 @@ Docker
 
 Step-by-step:
 
-create .gitignore
-create .dockerignore
-create docker-compose.yml
-
-run:
-```console
 func init --worker-runtime node --language typescript --docker
 
-func new --name YOURNAME --template "HTTP trigger" --authlevel anonymous
+func new --name HttpExample --template "HTTP trigger" --authlevel anonymous
 
-npm install
+docker build --tag appname:v1.0.0 .
 
-npm start
-```
-
+docker run -p 8080:80 -it appname:v1.0.0
 
