@@ -56,7 +56,7 @@ jobs:
       - task: Docker@2
         inputs:
           containerRegistry: 'DemoPipeline Docker Registry' # Your docker registry service connection
-          repository: 'demo.pipeline'
+          repository: 'Repository Name' # Your docker repository name
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
           addPipelineData: false
@@ -64,3 +64,6 @@ jobs:
 ```
 
 In Azure DevOps navigate to Pipelines => Releases => New => New release pipeline
+
+
+
