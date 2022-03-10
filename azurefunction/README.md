@@ -13,6 +13,12 @@ create docker-compose.yml
 run:
 ```console
 func init --worker-runtime node --language typescript --docker
+
+func new --name YOURNAME --template "HTTP trigger" --authlevel anonymous
+
+npm install
+
+npm start
 ```
 
 
