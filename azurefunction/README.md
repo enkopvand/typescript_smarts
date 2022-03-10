@@ -39,3 +39,28 @@ functions appp
 setup
 deploymentslot on function app
 
+
+create pipeline
+
+change pipeline to (or don't use diffrent users for azure devops and portal)
+```yaml
+trigger:
+  - main
+
+jobs:
+  - job: BuildDockerImage
+    displayName: 'Build Docker Image'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'DemoPipeline Docker Registry' # Your docker registry service connection
+          repository: 'demo.pipeline'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          addPipelineData: false
+          addBaseImageData: false
+```
+
+In Azure DevOps navigate to Pipelines => Releases => New => New release pipeline
