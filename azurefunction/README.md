@@ -26,3 +26,7 @@ docker run -p 8080:80 -it appname:v1.0.0
 
 docker build --tag helios-func-doc2data:v1.0.0 .
 docker run -p 8080:80 -it helios-func-doc2data:v1.0.0
+
+http://localhost:8080/api/HttpExample?name=jacob
+
+http://localhost:8080/api/bdode?name=jacob
